@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildprofiles SYSTEM "https://resources.jetbrains.com/writerside/1.0/build-profiles.dtd">
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <variables>
+        <primary-color>#008564</primary-color>
+        <color-preset>contrast</color-preset>
+        <custom-favicons>favicon.png</custom-favicons>
+        <header-logo>header.png</header-logo>
+    </variables>
+    <build-profile instance="sdh">
+        <variables>
+            <noindex-content>true</noindex-content>
+        </variables>
+    </build-profile>
+    <build-profile instance="a">
+        <variables>
+            <noindex-content>true</noindex-content>
+        </variables>
+    </build-profile>
+    <build-profile instance="ug">
+        <variables>
+            <noindex-content>true</noindex-content>
+        </variables>
+    </build-profile>
+
+    <footer>
+        <copyright>2024 Delft Hyperloop</copyright>
+        <link href="http://www.delfthyperloop.nl">delfthyperloop.nl</link>
+        <social type="linkedin" href="https://www.linkedin.com/company/delft-hyperloop/"/>
+        <social type="instagram" href="https://www.instagram.com/delfthyperloop/"/>
+    </footer>
+    <build-profile instance="sdh">
+        <variables>
+            <noindex-content>true</noindex-content>
+        </variables>
+    </build-profile>
+</buildprofiles>

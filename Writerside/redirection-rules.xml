@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="59e37d5a">
+        <description>Created after removal of "About Developer Handbook" from Developer Handbook</description>
+        <accepts>starter-topic.html</accepts>
+    </rule>
+    <rule id="50e788c2">
+        <description>Created after removal of "Topic title" from Developer Handbook</description>
+        <accepts>Home.html</accepts>
+    </rule>
+    <rule id="60abba6d">
+        <description><![CDATA[Created after removal of "<Serpenta-GUI.md>" from Developer Handbook]]></description>
+        <accepts>Serpenta-GUI.html</accepts>
+    </rule>
+    <rule id="589e7f2e">
+        <description>Created after removal of "Serpenta GUI" from Developer Handbook</description>
+        <accepts>home.html</accepts>
+    </rule>
+    <rule id="77bec036">
+        <description>Created after removal of "aaaaaaa" from Developer Handbook</description>
+        <accepts>Home.html</accepts>
+    </rule>
+</rules>

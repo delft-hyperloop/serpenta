@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="sdh"
+                 name="Serpenta Developer Handbook"
+                  start-page="Home.md">
+
+    <toc-element topic="Home.md"/>
+    <toc-element topic="UI-Toolkit.md"/>
+    <toc-element topic="Grand-Data-Distributor.md"/>
+    <toc-element topic="Chart-Manager.md"/>
+    <toc-element topic="Guides.md"/>
+</instance-profile>

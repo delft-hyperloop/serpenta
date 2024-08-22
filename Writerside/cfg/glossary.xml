@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE terms SYSTEM "https://resources.jetbrains.com/writerside/1.0/glossary.dtd">
+<terms>
+    <term name="GUI standard">
+        GUI Standard in this context means a set of UI components, design and style choices,
+        architecture and reusable implementation.
+
+        Serpenta provides UI toolkit, data distributor and chart organiser, while enforcing
+        particular style.
+    </term>
+</terms>
