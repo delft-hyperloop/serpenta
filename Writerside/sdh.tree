@@ -6,9 +6,25 @@
                  name="Serpenta Developer Handbook"
                   start-page="Home.md">
 
-    <toc-element topic="Home.md"/>
-    <toc-element topic="UI-Toolkit.md"/>
-    <toc-element topic="Grand-Data-Distributor.md"/>
-    <toc-element topic="Chart-Manager.md"/>
+    <toc-element topic="Home.md">
+        <toc-element topic="Getting-Started.md"/>
+        <toc-element topic="DH08-GUI-Setup.md"/>
+        <toc-element topic="Contributing-Maintenance.md"/>
+    </toc-element>
+    <toc-element topic="Architecture.md">
+        <toc-element topic="Communication-Middleware.md">
+        </toc-element>
+    </toc-element>
+    <toc-element topic="UI-Toolkit.md">
+        <toc-element topic="generics.md"/>
+        <toc-element topic="Chart.md"/>
+        <toc-element topic="Tables.md"/>
+        <toc-element topic="Panels.md"/>
+        <toc-element topic="Windows.md"/>
+    </toc-element>
+    <toc-element topic="Reference.md"/>
     <toc-element topic="Guides.md"/>
+    <toc-element topic="Chart-Manager.md"/>
+    <toc-element topic="Grand-Data-Distributor.md"/>
+    <toc-element topic="kiril-s-wishes.md"/>
 </instance-profile>
