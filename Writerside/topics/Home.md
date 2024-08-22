@@ -10,9 +10,9 @@ using their APIs to create a common UI component toolkit, data distributor middl
 This document covers the usage, architecture and implementation details of the Serpenta Standard, the reference of the
 provided Svelte UI toolkit and several guides. 
 
-> This document  is meant for software engineers. 
+> This document is meant for software engineers. 
 > If you want to learn how to use the app, please refer to the User Guide.
-{style="note"}
+> {style="note"}
 
 ## What is Serpenta?
 
@@ -21,3 +21,16 @@ ground station controlling Helios III. It provides:
 - a common UI toolkit for displaying data points received from the Hyperloop pod
 - a configurable middleware for managing data distribution and command issuing to the pod
 - utilities for refreshing and supporting charts
+
+<seealso>
+    <category ref="related">
+        <a href="UI-Toolkit.md">Svelte UI Toolkit</a>
+        <a href="Grand-Data-Distributor.md">GDD Interface</a>
+        <a href="Chart-Manager.md">Chart manager interface</a>
+        <a href="Guides.md">Guides and recipes</a>
+    </category>
+    <category ref="external">
+        <a href="https://tauri.app/">Tauri</a>
+        <a href="https://kit.svelte.dev/">SvelteKit</a>
+    </category>
+</seealso>
