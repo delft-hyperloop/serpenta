@@ -149,7 +149,7 @@ itself: Tailwind and Skeleton, we have provided a GUI-starter template that will
 you (together with page routes for the [Serpenta's multi-window API](Windows.md))
 
 First, start from the template project. This will give you all the required dependencies and a basic
-file structure you can follow. 
+file structure you can follow.
 
 <seealso>
     <category ref="external">

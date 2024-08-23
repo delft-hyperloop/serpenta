@@ -7,4 +7,9 @@ If you decide to stick to and use Serpenta, I wish for the following:
 - keep this open-source
 - consider migrating to Deno or Bun instead of Node
 
+No matter if you do or not, I wish for the following as well:
+- Design and architecture your software architecture well
+- Write a similar documentation for your code base (using [Writerside](https://www.jetbrains.com/help/writerside/discover-writerside.html) for example)
+- Promote the delivery of quality information along the DH generations
+
 Godspeed, DH09!

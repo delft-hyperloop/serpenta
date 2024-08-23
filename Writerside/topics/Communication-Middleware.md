@@ -1,3 +1,0 @@
-# Communication Middleware
-
-Start typing here...

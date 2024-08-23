@@ -26,4 +26,12 @@
         <description>Created after removal of "aaaaaaa" from Developer Handbook</description>
         <accepts>Home.html</accepts>
     </rule>
+    <rule id="7dd21e2d">
+        <description>Created after removal of "Communication Middleware" from Serpenta Developer Handbook</description>
+        <accepts>Communication-Middleware.html</accepts>
+    </rule>
+    <rule id="61e9f3d">
+        <description>Created after removal of "Reference" from Serpenta Developer Handbook</description>
+        <accepts>Reference.html</accepts>
+    </rule>
 </rules>
