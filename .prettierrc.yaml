@@ -1,0 +1,17 @@
+# Prettier configuration
+arrowParens: avoid
+requirePragma: false
+insertPragma: false
+proseWrap: always
+trailingComma: "none"
+tabWidth: 4
+semi: true
+useTabs: false
+singleQuote: false
+printWidth: 120
+plugins:
+  - prettier-plugin-svelte
+overrides:
+  - files: "*.svelte"
+    options:
+      parser: svelte

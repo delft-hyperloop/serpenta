@@ -39,7 +39,9 @@
         <toc-element topic="Stale-Data-Painter.md"/>
     </toc-element>
     <toc-element topic="Reference.md">
+        <toc-element topic="Conventions.md"/>
         <toc-element topic="Envrionment-Variables.md"/>
+        <toc-element topic="Tauri-Event-Channels.md"/>
     </toc-element>
     <toc-element topic="Guides.md"/>
     <toc-element topic="epilogue.md"/>
