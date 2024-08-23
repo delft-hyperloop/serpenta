@@ -9,9 +9,11 @@
     <toc-element topic="Home.md">
         <toc-element topic="Getting-Started.md"/>
         <toc-element topic="DH08-GUI-Setup.md"/>
+        <toc-element topic="SvelteKit-Starter-Kit.md"/>
         <toc-element topic="Contributing-Maintenance.md"/>
     </toc-element>
     <toc-element topic="Architecture.md">
+        <toc-element topic="Stores.md"/>
         <toc-element topic="Configuration-Interface.md"/>
         <toc-element topic="Front-end-State-Persistence.md"/>
         <toc-element topic="Separation-of-View-Control.md"/>
@@ -35,8 +37,10 @@
     <toc-element topic="Safety-Features.md">
         <toc-element topic="Alerts.md"/>
         <toc-element topic="Emergency-Button.md"/>
+        <toc-element topic="Procedures.md"/>
         <toc-element topic="Keybinds.md"/>
         <toc-element topic="Stale-Data-Painter.md"/>
+        <toc-element topic="Multi-window-System.md"/>
     </toc-element>
     <toc-element topic="Reference.md">
         <toc-element topic="Conventions.md"/>

@@ -1,4 +1,4 @@
-# Windows
+# SvelteKit Starter Kit
 
 <primary-label ref="serpenta-starter-kit"/>
 
