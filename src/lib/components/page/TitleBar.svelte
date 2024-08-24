@@ -1,6 +1,7 @@
 <script lang="ts">
-    import { appWindow } from "@tauri-apps/api/window";
     import Icon from "@iconify/svelte";
+
+    export let appWindow: any;
 </script>
 
 <div data-tauri-drag-region class="bg-surface-900 flex justify-between items-center p-1 px-2">

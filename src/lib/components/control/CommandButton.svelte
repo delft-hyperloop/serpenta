@@ -2,6 +2,7 @@
     import { invoke } from "@tauri-apps/api/tauri";
     import util from "$lib/util.js";
     import { getContext } from "svelte";
+    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
 
     export let className: string = "";
     export let cmd: string;
@@ -9,19 +10,17 @@
     export let callback: (val: number) => void = () => {};
     export let text: string = "";
 
-    const generic_command_name: string = getContext<string>("serpenta-context-generic_command_name");
-    const infoChannel: string = getContext<string>("serpenta-context-channel-info");
-    const errorChannel: string = getContext<string>("serpenta-context-channel-error");
+    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
 
     let send = async () => {
-        await invoke(generic_command_name, { cmdName: cmd, val })
+        await invoke(config.generic_command_name, { cmdName: cmd, val })
             .then(() => {
                 console.log(`Command ${cmd} sent with val: ${val}`);
-                util.log(`Command ${cmd} sent with val: ${val}`, infoChannel);
+                util.log(`Command ${cmd} sent with val: ${val}`, config.channel.info);
             })
             .catch(e => {
                 console.error(`Error sending command ${cmd} with val \`${val}\`: ${e}`);
-                util.log(`Error sending command ${cmd} with val \`${val}\`: ${e}`, errorChannel);
+                util.log(`Error sending command ${cmd} with val \`${val}\`: ${e}`, config.channel.error);
             });
         callback(val);
     };

@@ -1,7 +1,10 @@
 <script lang="ts">
     import { getContext, onDestroy, onMount } from "svelte";
-    import { GrandDataDistributor } from "$lib";
-    const gdd: GrandDataDistributor = getContext<GrandDataDistributor>("serpenta-context-gdd");
+    import { type DataDistributor } from "$lib";
+    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
+
+    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
+    const gdd: DataDistributor = config.grand_data_distributor;
 
     let boot_state: SVGGElement;
     let est_con_state: SVGGElement;
@@ -19,8 +22,8 @@
     let moving_ls_st: SVGGElement;
     let all_states: SVGGElement[];
 
-    const storeManager = gdd.getInstance().stores;
-    const fsmState = storeManager.getWritable("FSMState");
+    const storeManager = gdd.stores;
+    const fsmState = storeManager.getWritable<number>("FSMState");
 
     function turn_on(state: SVGGElement) {
         if (!state || !state.style) return;

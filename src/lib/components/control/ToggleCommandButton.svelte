@@ -2,6 +2,7 @@
     import { invoke } from "@tauri-apps/api/tauri";
     import { getContext } from "svelte";
     import { util } from "$lib";
+    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
 
     export let offCmd: string;
     export let onCmd: string;
@@ -12,17 +13,16 @@
     // for binding
     export let status: boolean = false;
 
-    const infoChannel: string = getContext<string>("serpenta-context-channel-info");
-    const errorChannel: string = getContext<string>("serpenta-context-channel-error");
+    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
 
     const toggleOff = () => {
         invoke("send_command", { cmdName: offCmd, val }).then(r => {
             if (r) {
                 status = false;
-                util.log(`send command ${offCmd} worked`, infoChannel);
+                util.log(`send command ${offCmd} worked`, config.channel.info);
                 callback(val);
             } else {
-                util.log(`send command ${offCmd} failed`, errorChannel);
+                util.log(`send command ${offCmd} failed`, config.channel.error);
             }
         });
     };
@@ -31,10 +31,10 @@
         invoke("send_command", { cmdName: onCmd, val }).then(r => {
             if (r) {
                 status = true;
-                util.log(`send command ${onCmd} worked`, infoChannel);
+                util.log(`send command ${onCmd} worked`, config.channel.info);
                 callback(val);
             } else {
-                util.log(`send command ${onCmd} failed`, errorChannel);
+                util.log(`send command ${onCmd} failed`, config.channel.error);
             }
         });
     };
@@ -59,7 +59,7 @@
     </button>
 </div>
 
-<style lang="scss">
+<style>
     .active {
         background-color: rgb(77, 156, 137);
     }

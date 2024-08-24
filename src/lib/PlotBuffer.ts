@@ -3,6 +3,7 @@ import uPlot from "uplot";
 /**
  * Wrapper for uPlot charts, handling the buffering of new information and
  * the graphs' later redraw.
+ * This buffer manages the buffering of the data, the processing
  */
 export class PlotBuffer {
     private _plots: Map<HTMLDivElement, uPlot> = new Map();
@@ -13,20 +14,20 @@ export class PlotBuffer {
     private readonly updateInterval: number;
 
     /**
-     *
-     * @param updateInterval in milliseconds
-     * @param span
-     * @param yRange
-     * @param showLegend
-     * @param label
+     * Construct a plot buffer.
+     * @param updateInterval in milliseconds.
+     * Determines the frequency of the chart redrawing as well as the number of points
+     * on the x-axis (as it is used to display the data across time intervals).
+     * @param span in minutes.
+     * Determines for how long back in time should data be visible on the chart as well
+     * as the number of points on the x-axis (together with `updateInterval`)
+     * @param showLegend whether to show the legend or not when rendering the chart with
+     * the `<Chart ... />` component.
+     * Defaults to `false`.
+     * @param label the label of the y-axis that will appear on the rendered chart.
+     * Defaults to "y".
      */
-    constructor(
-        updateInterval: number,
-        span: number,
-        yRange: [number, number],
-        showLegend: boolean = false,
-        label: string = "y"
-    ) {
+    constructor(updateInterval: number, span: number, showLegend: boolean = false, label: string = "y") {
         this.updateInterval = updateInterval;
         this.buffer = [[]];
 
@@ -44,10 +45,9 @@ export class PlotBuffer {
             width: 500,
             height: 300,
             legend: { show: showLegend },
-            // scales: { "%": { auto: false }, y: { range: yRange }, x: { time: true } },
             scales: {
                 "%": { auto: false },
-                y: { range: (self, dataMin, dataMax) => uPlot.rangeNum(dataMin, dataMax, 0.1, true) },
+                y: { range: (_, dataMin, dataMax) => uPlot.rangeNum(dataMin, dataMax, 0.1, true) },
                 x: { time: true }
             },
             axes: [
@@ -143,7 +143,7 @@ export class PlotBuffer {
                     ? this.buffer[i].reduce((a, b) => a + b, 0) / this.buffer[i].length
                     : this.lastEntryOf(i);
 
-            let datum = this._data[i];
+            const datum = this._data[i];
             for (let j = 0; j < datum.length - 1; j++) {
                 datum[j] = datum[j + 1];
             }

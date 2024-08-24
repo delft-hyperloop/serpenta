@@ -1,11 +1,15 @@
 <script lang="ts">
     import { getContext, onMount } from "svelte";
-    import { GrandDataDistributor } from "$lib";
+    import { ErrorStatus, type DataDistributor } from "$lib";
     import type { Writable } from "svelte/store";
+    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
 
-    const bigErrorStatus: Writable<number> = getContext<Writable<number>>("serpenta-context-state-bigError");
-    const fsmStateName: string = getContext<string>("serpenta-context-stores-fsm");
-    const podName: string = getContext<string>("serpenta-context-pod-name");
+    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
+    const gdd: DataDistributor = config.grand_data_distributor;
+
+    const bigErrorStatus: Writable<ErrorStatus> = config.big_error;
+    const fsmStateName: string = config.stores.fsm;
+    const podName: string = config.pod_name;
 
     let time = new Date().toLocaleTimeString([], {
         hour: "2-digit",
@@ -29,8 +33,7 @@
         };
     });
 
-    const storeManager = GrandDataDistributor.getInstance().stores;
-    const fsmState = storeManager.getWritable(fsmStateName);
+    const fsmState = gdd.stores.getWritable(fsmStateName);
 </script>
 
 <footer

@@ -13,13 +13,20 @@ import Tile from "$lib/components/page/Tile.svelte";
 import TileGrid from "$lib/components/page/TileGrid.svelte";
 import TitleBar from "$lib/components/page/TitleBar.svelte";
 import Chart from "$lib/components/data/Chart.svelte";
-import SpeedsInput from "$lib/components/SpeedsInput.svelte";
 import Store from "$lib/components/data/Store.svelte";
 import Table from "$lib/components/data/Table.svelte";
-import { PlotBuffer } from "$lib/PlotBuffer.js";
-import { GrandDataDistributor } from "$lib/GrandDataDistributor.js";
-import util from "$lib/util.js";
-import type { ViewWindow } from "./WindowControl.js";
+import SerpentaShell from "$lib/appShell/SerpentaShell.svelte";
+import PanelBase from "$lib/appShell/PanelBase.svelte";
+import { PlotBuffer, StrokePresets } from "$lib/PlotBuffer";
+import type { DataDistributor } from "$lib/middleware/DataDistributor";
+import util from "$lib/util";
+import { ViewWindow } from "./middleware/WindowControl";
+import { defineConfig, type SerpentaConfig } from "$lib/appShell/SerpentaConfig";
+
+/**
+ * Function to convert data received at DATAPOINT.value to a given type
+ */
+export type dataConvFun<T> = (data: number, old: T) => T;
 
 export enum ErrorStatus {
     SAFE,
@@ -41,11 +48,15 @@ export {
     TileGrid,
     TitleBar,
     Chart,
-    SpeedsInput,
     Store,
     Table,
     PlotBuffer,
-    GrandDataDistributor,
+    type DataDistributor,
+    PanelBase,
     util,
-    type ViewWindow
+    ViewWindow,
+    SerpentaShell,
+    type SerpentaConfig,
+    defineConfig,
+    StrokePresets
 };

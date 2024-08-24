@@ -1,14 +1,15 @@
 <script lang="ts">
-    import type { NamedDatatype } from "$lib/types.js";
-    import { GrandDataDistributor } from "$lib";
     import { getContext } from "svelte";
-    import type { Writable } from "svelte/store";
+    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
+    import { type DataDistributor } from "$lib";
 
-    const latestTimestamp = getContext<Writable<number>>("serpenta-context-state-latestTimestamp");
+    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
+    const latestTimestamp = config.latest_timestamp;
+    const gdd: DataDistributor = config.grand_data_distributor;
 
     const STALE_DATA_TICKS = 10_000;
-    export let datatype: NamedDatatype;
-    const store = GrandDataDistributor.getInstance().stores.getWritable(datatype);
+    export let datatype: string;
+    const store = gdd.stores.getWritable(datatype);
 
     $: store;
 </script>

@@ -1,9 +1,5 @@
 import { emit } from "@tauri-apps/api/event";
 
-function range(count: number, start?: number, num?: number): number[] {
-    return Array.from({ length: count }, (_, i) => (num || i) + (start || 0));
-}
-
 function snakeToCamel(s: string): string {
     return s
         .replace(/([-_]\w)/g, g => g[1].toUpperCase())
@@ -26,4 +22,4 @@ function log(message: string, channel: string) {
     emit(channel, message).then(r => console.log(r));
 }
 
-export default { range, snakeToCamel, normalize, colourCode, log };
+export default { snakeToCamel, normalize, colourCode, log };

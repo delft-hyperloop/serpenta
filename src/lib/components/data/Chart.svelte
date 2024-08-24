@@ -3,9 +3,10 @@
     import "uplot/dist/uPlot.min.css";
     import { PlotBuffer, ViewWindow } from "$lib";
     import Icon from "@iconify/svelte";
-    import type { Writable } from "svelte/store";
+    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
 
-    const grandCharter = getContext<Writable<Map<string, PlotBuffer>>>("serpenta-context-gc");
+    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
+    const grandCharter = config.grand_charter;
 
     export let title: string;
     export let background: string = "bg-surface-800";
@@ -38,7 +39,7 @@
             <h4 class="text-md text-primary-100">{title}</h4>
             <span class="font-mono"></span>
             {#if pop_up}
-                <button on:click={() => new ViewWindow(title, `/view/chart/${title}`)}>
+                <button on:click={() => ViewWindow.newWindow(title, `/view/chart/${title}`)}>
                     <Icon icon="carbon:popup" />
                 </button>
             {/if}
