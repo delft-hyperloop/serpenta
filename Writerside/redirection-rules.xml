@@ -46,4 +46,8 @@
         <description>Created after removal of "Panels" from Serpenta Developer Handbook</description>
         <accepts>Panels.html</accepts>
     </rule>
+    <rule id="78e93a0f">
+        <description>Created after removal of "Features" from Serpenta Developer Handbook</description>
+        <accepts>Features.html</accepts>
+    </rule>
 </rules>
