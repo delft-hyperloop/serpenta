@@ -34,4 +34,16 @@
         <description>Created after removal of "Reference" from Serpenta Developer Handbook</description>
         <accepts>Reference.html</accepts>
     </rule>
+    <rule id="531a7575">
+        <description>Created after removal of "Generic" from Serpenta Developer Handbook</description>
+        <accepts>generics.html</accepts>
+    </rule>
+    <rule id="48e1b00e">
+        <description>Created after removal of "Localiser" from Serpenta Developer Handbook</description>
+        <accepts>Localiser.html</accepts>
+    </rule>
+    <rule id="383683e3">
+        <description>Created after removal of "Panels" from Serpenta Developer Handbook</description>
+        <accepts>Panels.html</accepts>
+    </rule>
 </rules>

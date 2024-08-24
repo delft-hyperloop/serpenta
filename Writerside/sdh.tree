@@ -22,10 +22,14 @@
     </toc-element>
     <toc-element topic="UI-Toolkit.md">
         <toc-element topic="Base.md"/>
-        <toc-element topic="generics.md"/>
-        <toc-element topic="Chart.md"/>
-        <toc-element topic="Tables.md"/>
-        <toc-element topic="Panels.md"/>
+        <toc-element topic="Control.md"/>
+        <toc-element topic="Data.md">
+            <toc-element topic="Chart.md"/>
+            <toc-element topic="Tables.md"/>
+        </toc-element>
+        <toc-element topic="Graphic.md"/>
+        <toc-element topic="Page.md">
+        </toc-element>
         <toc-element topic="Windows.md"/>
     </toc-element>
     <toc-element topic="Utilities.md">

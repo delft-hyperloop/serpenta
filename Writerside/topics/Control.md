@@ -1,3 +1,3 @@
-# Panels
+# Control
 
 Start typing here...

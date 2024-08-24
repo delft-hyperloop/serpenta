@@ -1,3 +1,3 @@
-# Generic
+# Graphic
 
 Start typing here...

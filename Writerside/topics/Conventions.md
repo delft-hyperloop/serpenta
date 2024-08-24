@@ -1,9 +1,11 @@
 # Conventions
 
 Conventions set important rules for the development process that _should_ bring some kind of benefit. Commit, issue 
-or PR conventions where not present during DH08, but the one below are left for suggestion:
+or PR conventions where not present during DH08, but the one below are left for suggestion (and are mostly already used
+throughout Serpenta):
 
 - use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) for commit naming
+- use Oxford British english.
 
 ## Prettier formatting for TypeScript
 
