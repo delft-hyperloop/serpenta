@@ -23,6 +23,9 @@ ground station controlling Helios III. It provides:
 -   a configurable middleware for managing data distribution and command issuing to the pod
 -   utilities for refreshing and supporting charts
 
+![dh08serpenta.png](dh08serpenta.png){style="block"}
+_DH08 Serpenta GUI on its Home tab_
+
 <seealso>
     <category ref="related">
         <a href="UI-Toolkit.md">Svelte UI Toolkit</a>
