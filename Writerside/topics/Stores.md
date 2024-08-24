@@ -30,7 +30,7 @@ stores with additional information that is closely tied to the received values.
 
 ```Typescript
 class Store<T> {
-    /* convert the received  
+    /* convert the received  */
     public readonly processFunction: dataConvFun<T>;
     private _value: T;
     private _style: string;
