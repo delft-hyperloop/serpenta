@@ -5,7 +5,7 @@
     import Icon from "@iconify/svelte";
     import type { Writable } from "svelte/store";
 
-    const grandCharter = getContext<Writable<Map<string, PlotBuffer>>>("serpenta-context-gc")
+    const grandCharter = getContext<Writable<Map<string, PlotBuffer>>>("serpenta-context-gc");
 
     export let title: string;
     export let background: string = "bg-surface-800";
@@ -50,5 +50,3 @@
 {:else}
     <p>CHART {title} NOT FOUND</p>
 {/if}
-
-

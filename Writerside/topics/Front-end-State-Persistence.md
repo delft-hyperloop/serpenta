@@ -1,3 +1,3 @@
-# Front-end State Persistence 
+# Front-end State Persistence
 
 Start typing here...

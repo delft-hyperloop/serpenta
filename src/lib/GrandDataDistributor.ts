@@ -1,6 +1,6 @@
-import {invoke} from "@tauri-apps/api/tauri";
-import {get, type Writable, writable} from "svelte/store";
-import {type dataConvFun, type Datapoint, type NamedDatatype} from "./types.js";
+import { invoke } from "@tauri-apps/api/tauri";
+import { get, type Writable, writable } from "svelte/store";
+import { type dataConvFun, type Datapoint, type NamedDatatype } from "./types.js";
 
 /**
  * The GrandDataDistributor class is responsible for fetching data from the backend
@@ -30,7 +30,7 @@ import {type dataConvFun, type Datapoint, type NamedDatatype} from "./types.js";
  */
 export class GrandDataDistributor {
     private intervalId: number | null = null;
-    private readonly StoreManager:StoreManager;
+    private readonly StoreManager: StoreManager;
     private static instance: GrandDataDistributor;
 
     static getInstance() {
@@ -57,12 +57,12 @@ export class GrandDataDistributor {
      * @note this method will start the interval and fetch data from the backend
      * at the specified interval
      */
-    public start(interval:number) {
+    public start(interval: number) {
         if (!this.intervalId) this.intervalId = setInterval(() => this.fetchData(), interval);
     }
 
     public async fetchTestOnce() {
-        const data:Datapoint[] = await invoke('generate_test_data');
+        const data: Datapoint[] = await invoke("generate_test_data");
         this.processData(data);
     }
 
@@ -78,7 +78,7 @@ export class GrandDataDistributor {
      * @private
      */
     private async fetchData() {
-        const data:Datapoint[] = await invoke('unload_buffer');
+        const data: Datapoint[] = await invoke("unload_buffer");
         this.processData(data);
     }
 
@@ -87,8 +87,14 @@ export class GrandDataDistributor {
      * @param data - the data fetched from the backend
      */
     protected processData(data: Datapoint[]) {
-        data.forEach((datapoint) => {
-            this.StoreManager.updateStore(datapoint.datatype, new Date().getTime(), datapoint.style, datapoint.units, datapoint.value);
+        data.forEach(datapoint => {
+            this.StoreManager.updateStore(
+                datapoint.datatype,
+                new Date().getTime(),
+                datapoint.style,
+                datapoint.units,
+                datapoint.value
+            );
         });
     }
 
@@ -117,8 +123,8 @@ class StoreManager {
      * @param initialUnits
      * @param processFunction - the function to process the data
      */
-    public registerStore<T>(name: NamedDatatype, initial: T, processFunction?: dataConvFun<T>, initialUnits?:string) {
-        this.stores.set(name, writable<Store<T>>(new Store(initial, '', initialUnits || '', 0, processFunction)));
+    public registerStore<T>(name: NamedDatatype, initial: T, processFunction?: dataConvFun<T>, initialUnits?: string) {
+        this.stores.set(name, writable<Store<T>>(new Store(initial, "", initialUnits || "", 0, processFunction)));
     }
 
     /**
@@ -129,20 +135,28 @@ class StoreManager {
      * @param units
      * @param data - the data to update the store with
      */
-    public updateStore(name: NamedDatatype, timestamp:number, style:string, units:string, data: number) {
+    public updateStore(name: NamedDatatype, timestamp: number, style: string, units: string, data: number) {
         const store = this.stores.get(name);
         if (store) {
             const storeVal = get(store);
-            store.set(new Store(storeVal.processFunction(data, storeVal.value), style, units, timestamp, storeVal.processFunction))
+            store.set(
+                new Store(
+                    storeVal.processFunction(data, storeVal.value),
+                    style,
+                    units,
+                    timestamp,
+                    storeVal.processFunction
+                )
+            );
         }
     }
 
-    public getValue(name: NamedDatatype):any {
+    public getValue(name: NamedDatatype): any {
         if (!this.stores.has(name)) throw new Error(`Store with name ${name} does not exist`);
         return get(this.stores.get(name)!).value;
     }
 
-    public getWritable(name: NamedDatatype):Writable<Store<any>> {
+    public getWritable(name: NamedDatatype): Writable<Store<any>> {
         if (!this.stores.has(name)) throw new Error(`Store with name ${name} does not exist`);
         return this.stores.get(name)!;
     }
@@ -160,7 +174,13 @@ class Store<T> {
     private _units: string;
     private _timestamp: number;
 
-    constructor(initial:T, style:string, units:string, timestamp: number, processFunction: dataConvFun<T> = (data:number) => data.valueOf() as unknown as T) {
+    constructor(
+        initial: T,
+        style: string,
+        units: string,
+        timestamp: number,
+        processFunction: dataConvFun<T> = (data: number) => data.valueOf() as unknown as T
+    ) {
         this._value = initial;
         this.processFunction = processFunction;
         this._style = style;
@@ -168,18 +188,17 @@ class Store<T> {
         this._timestamp = timestamp;
     }
 
-    public get value():T {
+    public get value(): T {
         return this._value;
     }
 
-    public get style():string {
+    public get style(): string {
         return this._style;
     }
 
     get units(): string {
         return this._units;
     }
-
 
     get timestamp(): number {
         return this._timestamp;

@@ -1,5 +1,4 @@
-import uPlot from 'uplot';
-
+import uPlot from "uplot";
 
 /**
  * Wrapper for uPlot charts, handling the buffering of new information and
@@ -11,7 +10,7 @@ export class PlotBuffer {
     private readonly _data: uPlot.AlignedData;
     private readonly _opts: uPlot.Options;
     private readonly buffer: number[][];
-    private readonly updateInterval:number;
+    private readonly updateInterval: number;
 
     /**
      *
@@ -21,7 +20,14 @@ export class PlotBuffer {
      * @param showLegend
      * @param label
      */
-    constructor(updateInterval:number, span:number, yRange: [number, number], showLegend: boolean = false, label: string = "y") {    this.updateInterval = updateInterval;
+    constructor(
+        updateInterval: number,
+        span: number,
+        yRange: [number, number],
+        showLegend: boolean = false,
+        label: string = "y"
+    ) {
+        this.updateInterval = updateInterval;
         this.buffer = [[]];
 
         const spanInSeconds = span / 1000;
@@ -30,22 +36,27 @@ export class PlotBuffer {
         const xDataLength = Math.round(spanInSeconds / updateIntervalInSeconds);
 
         const currentTime = Date.now() / 1000;
-        this._data = [Array.from({length: xDataLength}, (_, i) => currentTime - (xDataLength - i) * updateIntervalInSeconds)];
+        this._data = [
+            Array.from({ length: xDataLength }, (_, i) => currentTime - (xDataLength - i) * updateIntervalInSeconds)
+        ];
 
         this._opts = {
             width: 500,
             height: 300,
-            legend: {show: showLegend},
+            legend: { show: showLegend },
             // scales: { "%": { auto: false }, y: { range: yRange }, x: { time: true } },
-            scales: { "%": { auto: false }, y: { range: (self, dataMin, dataMax) =>
-                        uPlot.rangeNum(dataMin, dataMax, 0.1, true) }, x: { time: true } },
+            scales: {
+                "%": { auto: false },
+                y: { range: (self, dataMin, dataMax) => uPlot.rangeNum(dataMin, dataMax, 0.1, true) },
+                x: { time: true }
+            },
             axes: [
                 {
                     stroke: "#e4e6ee",
                     grid: {
                         stroke: "rgba(255, 255, 255, 0.05)",
-                        width: 0.5,
-                    },
+                        width: 0.5
+                    }
                 },
                 {
                     stroke: "#e4e6ee",
@@ -54,18 +65,20 @@ export class PlotBuffer {
                         show: true,
                         width: 0.5,
                         stroke: "rgba(255, 255, 255, 0.05)"
-                    },
+                    }
                 }
             ],
-            series: [{
-                label: "timestamp",
-            }],
+            series: [
+                {
+                    label: "timestamp"
+                }
+            ]
         };
 
         this.addSeries(StrokePresets.hyperLoopGreen(label));
     }
 
-    public addSeries(series:uPlot.Series) {
+    public addSeries(series: uPlot.Series) {
         const index: number = this._data.length;
         this._data.push(new Int32Array(this._data[0].length));
         this._opts.series.push(series);
@@ -73,12 +86,12 @@ export class PlotBuffer {
         this.buffer[index] = [];
     }
 
-    public lastEntryOf(seriesIndex:number):number {
+    public lastEntryOf(seriesIndex: number): number {
         if (seriesIndex >= this._data.length) throw new Error("Series index out of bounds");
-        return this._data[seriesIndex][this._data[0].length-1] || 0;
+        return this._data[seriesIndex][this._data[0].length - 1] || 0;
     }
 
-    public updateSeries(seriesIndex:number, data:uPlot.TypedArray) {
+    public updateSeries(seriesIndex: number, data: uPlot.TypedArray) {
         if (seriesIndex >= this._data.length) throw new Error("Series index out of bounds");
         this._data[seriesIndex] = data;
     }
@@ -87,7 +100,7 @@ export class PlotBuffer {
         return this._data[seriesIndex];
     }
 
-    public setEntry(seriesIndex:number, dataIndex:number, value:number) {
+    public setEntry(seriesIndex: number, dataIndex: number, value: number) {
         this._data[seriesIndex][dataIndex] = value;
     }
 
@@ -97,7 +110,7 @@ export class PlotBuffer {
      * @param seriesIndex
      * @param value
      */
-    public addEntry(seriesIndex:number, value:number) {
+    public addEntry(seriesIndex: number, value: number) {
         this.buffer[seriesIndex].push(value);
     }
 
@@ -125,9 +138,10 @@ export class PlotBuffer {
 
     private updateData() {
         for (let i = 1; i < this.buffer.length; i++) {
-            const value = this.buffer[i].length > 0 ?
-                this.buffer[i].reduce((a, b) => a + b, 0) / this.buffer[i].length :
-                this.lastEntryOf(i);
+            const value =
+                this.buffer[i].length > 0
+                    ? this.buffer[i].reduce((a, b) => a + b, 0) / this.buffer[i].length
+                    : this.lastEntryOf(i);
 
             let datum = this._data[i];
             for (let j = 0; j < datum.length - 1; j++) {
@@ -151,10 +165,10 @@ export class PlotBuffer {
      */
     public redraw() {
         this._plots.forEach(plot =>
-          plot.batch(() => {
-              plot.setData(this._data, true);
-              plot.redraw(false, false);
-          })
+            plot.batch(() => {
+                plot.setData(this._data, true);
+                plot.redraw(false, false);
+            })
         );
     }
 
@@ -164,8 +178,8 @@ export class PlotBuffer {
      * @param width width in pixels
      * @param height height in pixels
      */
-    public setSize(plotContainer:HTMLDivElement, width:number, height:number) {
-        this._plots.get(plotContainer)?.setSize({width, height});
+    public setSize(plotContainer: HTMLDivElement, width: number, height: number) {
+        this._plots.get(plotContainer)?.setSize({ width, height });
     }
 
     /**
@@ -173,7 +187,7 @@ export class PlotBuffer {
      * This method should be called when the graph is no longer necessary.
      * It will stop the update interval and destroy the uPlot object.
      */
-    public destroy(plotContainer:HTMLDivElement) {
+    public destroy(plotContainer: HTMLDivElement) {
         const plot = this._plots.get(plotContainer);
 
         if (plot) {
@@ -195,7 +209,7 @@ export class StrokePresets {
             label,
             spanGaps: false,
             stroke: "#0ea774"
-        }
+        };
     }
 
     public static theoretical(label: string = "y"): uPlot.Series {
@@ -203,7 +217,7 @@ export class StrokePresets {
             label,
             spanGaps: false,
             stroke: "#ff0a43"
-        }
+        };
     }
 
     public static yellow(label: string = "y"): uPlot.Series {
@@ -211,7 +225,7 @@ export class StrokePresets {
             label,
             spanGaps: false,
             stroke: "#ffde0a"
-        }
+        };
     }
 
     public static blue(label: string = "y"): uPlot.Series {
@@ -219,7 +233,7 @@ export class StrokePresets {
             label,
             spanGaps: false,
             stroke: "#0a85ff"
-        }
+        };
     }
 
     public static hyperloopGreenDashed(label: string = "y"): uPlot.Series {
@@ -228,7 +242,7 @@ export class StrokePresets {
             spanGaps: false,
             stroke: "#0ea774",
             dash: [10, 5]
-        }
+        };
     }
 
     public static theoreticalDashed(label: string = "y"): uPlot.Series {
@@ -237,7 +251,7 @@ export class StrokePresets {
             spanGaps: false,
             stroke: "#ff0a43",
             dash: [10, 5]
-        }
+        };
     }
 
     public static yellowDashed(label: string = "y"): uPlot.Series {
@@ -246,7 +260,7 @@ export class StrokePresets {
             spanGaps: false,
             stroke: "#ffde0a",
             dash: [10, 5]
-        }
+        };
     }
 
     public static blueDashed(label: string = "y"): uPlot.Series {
@@ -255,11 +269,6 @@ export class StrokePresets {
             spanGaps: false,
             stroke: "#0a85ff",
             dash: [10, 5]
-        }
+        };
     }
 }
-
-
-
-
-

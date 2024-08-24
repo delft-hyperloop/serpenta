@@ -24,7 +24,7 @@ import type { ViewWindow } from "./WindowControl.js";
 export enum ErrorStatus {
     SAFE,
     WARNING,
-    UNSAFE,
+    UNSAFE
 }
 
 export {
