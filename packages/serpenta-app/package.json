@@ -1,0 +1,11 @@
+{
+  "name": "serpenta-app",
+  "version": "0.0.1",
+  "description": "A starter template for working with serpenta. Creates the routes and Tauri base files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}

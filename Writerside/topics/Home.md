@@ -29,7 +29,7 @@ ground station controlling Helios III. It provides:
     <category ref="related">
         <a href="UI-Toolkit.md">Svelte UI Toolkit</a>
         <a href="Grand-Data-Distributor.md">GDD Interface</a>
-        <a href="Chart-Manager.md">Chart manager interface</a>
+        <a href="Grand-Charter.md">Chart manager interface</a>
         <a href="Guides.md">Guides and recipes</a>
     </category>
     <category ref="external">
