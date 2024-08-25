@@ -18,8 +18,7 @@
         <toc-element topic="Emergency-Button.md"/>
         <toc-element topic="Procedures.md"/>
         <toc-element topic="Keybinds.md"/>
-        <toc-element topic="Stale-Data-Painter.md"/>
-        <toc-element topic="Multi-window-System.md"/>
+        <toc-element topic="Multi-window-Engine.md"/>
     </toc-element>
     <toc-element topic="Architecture.md">
         <toc-element topic="Stores.md"/>

@@ -7,4 +7,6 @@ tips on how to do exactly this - maintaining and developing Serpenta itself.
 If you are an outside developer and wish to contribute to this open-source standard, first of all, thank you so much.
 This document will guide you through the steps needed to contribute to Serpenta.
 
-... tbd - Zakrok09
+## Guidelines
+
+## Suggesting new features

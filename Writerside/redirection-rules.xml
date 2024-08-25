@@ -50,4 +50,8 @@
         <description>Created after removal of "Features" from Serpenta Developer Handbook</description>
         <accepts>Features.html</accepts>
     </rule>
+    <rule id="6809423c">
+        <description>Created after removal of "Stale Data Painter" from Serpenta Developer Handbook</description>
+        <accepts>Stale-Data-Painter.html</accepts>
+    </rule>
 </rules>

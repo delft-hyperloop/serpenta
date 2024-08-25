@@ -1,3 +1,7 @@
 # Safe Data Display
 
-Start typing here...
+## abnormal values painting
+
+## stale data painting
+
+## datatypes units display

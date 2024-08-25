@@ -148,10 +148,18 @@ It's time to use the Serpenta GUI Standard to create the newest GUI! Since Serpe
 and Skeleton, we have provided a GUI-starter template that will set these all up for you (together with page routes for
 the [Serpenta's multi-window API](Windows.md))
 
+You can create a new Serpenta project using its npm binary like so:
+
+```Shell
+npx @delft-hyperloop/create-serpenta-app [name]
+cd [name]
+npm i
+```
+
+This will automatically create a project folder with SvelteKit, Tauri and its dependencies installed (by the last step). 
 For further information on this template project, check the [SvelteKit Starter Kit page](SvelteKit-Starter-Kit.md).
 
-First, download the zip containing the template project, and unzip it to your already existing monorepo. Modify its
-`package.json` with the newest information.
+
 
 <seealso>
     <category ref="related">
