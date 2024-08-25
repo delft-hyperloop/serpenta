@@ -3,9 +3,32 @@
   "version": "0.0.1",
   "description": "A starter template for working with serpenta. Creates the routes and Tauri base files",
   "main": "index.js",
+  "keywords": [
+    "serpenta",
+    "wizard",
+    "sveltekit",
+    "create",
+    "new",
+    "project",
+    "starter",
+    "svelte",
+    "sveltekit",
+    "template"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "create-serpenta-app": "./index.js"
+  },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prompts": "^2.4.2"
+  },
+  "dependencies": {
+    "@delft-hyperloop/serpenta": "^0.1.1",
+    "cross-spawn": "^7.0.3",
+    "svelte": "^4.2.19"
+  }
 }
