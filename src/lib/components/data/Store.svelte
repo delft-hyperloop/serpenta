@@ -9,7 +9,7 @@
 
     const STALE_DATA_TICKS = 10_000;
     export let datatype: string;
-    const store = gdd.stores.getWritable(datatype);
+    const store = gdd.getWritable(datatype);
 
     $: store;
 </script>

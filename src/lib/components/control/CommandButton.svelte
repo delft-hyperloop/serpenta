@@ -1,6 +1,6 @@
 <script lang="ts">
     import { invoke } from "@tauri-apps/api/tauri";
-    import util from "$lib/util.js";
+    import { util } from "$lib";
     import { getContext } from "svelte";
     import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
 

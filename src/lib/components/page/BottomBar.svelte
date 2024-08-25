@@ -6,7 +6,6 @@
 
     const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
     const gdd: DataDistributor = config.grand_data_distributor;
-
     const bigErrorStatus: Writable<ErrorStatus> = config.big_error;
     const fsmStateName: string = config.stores.fsm;
     const podName: string = config.pod_name;
@@ -33,7 +32,7 @@
         };
     });
 
-    const fsmState = gdd.stores.getWritable(fsmStateName);
+    const fsmState = gdd.getWritable(fsmStateName);
 </script>
 
 <footer

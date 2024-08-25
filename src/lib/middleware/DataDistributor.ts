@@ -34,36 +34,25 @@ export interface DataDistributor {
     kill(): void;
 
     /**
-     * Get the store manager
-     * @note considered refactoring.
-     */
-    get stores(): StoreManager;
-}
-
-/**
- * The StoreManager class is responsible for managing the data stores
- */
-interface StoreManager {
-    /**
-     * Register a store
+     * Register a store.
      * @param name - the name of the store
-     * @param initial
-     * @param initialUnits
+     * @param initial - initial value of the store
      * @param processFunction - the function to process the data
+     * @param initialUnits - units of the store
+     * @see dataConvFun
      */
     registerStore<T>(name: string, initial: T, processFunction?: dataConvFun<T>, initialUnits?: string): void;
 
     /**
      * Update a store
-     * @param name - the name of the store
-     * @param timestamp
-     * @param style
-     * @param units
-     * @param data - the data to update the store with
+     * @param name the name of the store
+     * @param style the style of the store as to what colour it shall become
+     * @param units the units of this store.
+     * These do not get changed often but are sent from the config, so they are kept.
+     * @param data the data to update the store with
      */
-    updateStore(name: string, timestamp: number, style: string, units: string, data: number): void;
+    updateStore(name: string, style: string, units: string, data: number): void;
 
-    getValue<T>(name: string): T;
 
     getWritable<T>(name: string): Writable<Store<T>>;
 }
@@ -77,10 +66,7 @@ interface Store<T> {
     readonly processFunction: dataConvFun<T>;
 
     get value(): T;
-
     get style(): string;
-
     get units(): string;
-
     get timestamp(): number;
 }

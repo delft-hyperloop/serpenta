@@ -22,8 +22,7 @@
     let moving_ls_st: SVGGElement;
     let all_states: SVGGElement[];
 
-    const storeManager = gdd.stores;
-    const fsmState = storeManager.getWritable<number>("FSMState");
+    const fsmState = gdd.getWritable<number>("FSMState");
 
     function turn_on(state: SVGGElement) {
         if (!state || !state.style) return;
