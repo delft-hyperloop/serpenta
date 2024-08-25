@@ -53,20 +53,23 @@ export interface DataDistributor {
      */
     updateStore(name: string, style: string, units: string, data: number): void;
 
-
+    /**
+     * Get the writable of a store given its name.
+     * @param name the name of the store for which to grab the writable.
+     */
     getWritable<T>(name: string): Writable<Store<T>>;
 }
 
 /**
- * The Store class is responsible for managing the data store
- * and processing the data before setting it to the store.
- * This allows for processing the data before setting it to the store.
+ * The Store interface defines what is to be expected within the Serpenta system.
+ * One can define an object that may execute additional logic; however, the Serpenta
+ * UI kit and communication middleware simply require these fields and for them to be
+ * readonly.
  */
 interface Store<T> {
     readonly processFunction: dataConvFun<T>;
-
-    get value(): T;
-    get style(): string;
-    get units(): string;
-    get timestamp(): number;
+    readonly value: T;
+    readonly style: string;
+    readonly units: string;
+    readonly timestamp: number;
 }
