@@ -1,8 +1,8 @@
 {
-  "name": "serpenta-app",
-  "version": "0.0.1",
+  "name": "@delft-hyperloop/create-serpenta-app",
+  "version": "0.1.5",
   "description": "A starter template for working with serpenta. Creates the routes and Tauri base files",
-  "main": "index.js",
+  "main": "index.mjs",
   "keywords": [
     "serpenta",
     "wizard",
@@ -15,20 +15,12 @@
     "sveltekit",
     "template"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "bin": {
-    "create-serpenta-app": "./index.js"
+    "create-serpenta-app": "index.mjs"
   },
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "prompts": "^2.4.2"
-  },
-  "dependencies": {
-    "@delft-hyperloop/serpenta": "^0.1.1",
-    "cross-spawn": "^7.0.3",
-    "svelte": "^4.2.19"
-  }
+  "files": [
+    "template/**"
+  ],
+  "author": "Kiril Panayotov <contact@zakrok.dev> (https://zakrok.dev)",
+  "license": "MIT"
 }

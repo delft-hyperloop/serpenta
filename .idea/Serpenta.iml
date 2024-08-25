@@ -5,6 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.direnv" />
       <excludeFolder url="file://$MODULE_DIR$/.svelte-kit" />
       <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/serpenta-app/template/.direnv" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/serpenta-app/template/.svelte-kit" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/serpenta-app/template/src-tauri/target" />
       <excludeFolder url="file://$MODULE_DIR$/packages/serpenta/.svelte-kit" />
       <excludeFolder url="file://$MODULE_DIR$/packages/serpenta/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/serpenta/dist" />
