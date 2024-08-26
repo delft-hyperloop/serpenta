@@ -11,8 +11,8 @@ If you decide to stick to and use Serpenta, I wish for the following:
 No matter if you do or not, I wish for the following as well:
 
 -   Design and architecture your software architecture well
--   Write a similar documentation for your code base (using
-    [Writerside](https://www.jetbrains.com/help/writerside/discover-writerside.html) for example)
--   Promote the delivery of quality information along the DH generations
+-   Write similar documentation for your code base (using
+    [Writerside](https://www.jetbrains.com/help/writerside/discover-writerside.html), for example)
+-   Promote the delivery of quality information along the DH generations!
 
-Godspeed, DH09!
+Godspeed, DH09! — Kiril, the DH08 SenseCon team and DH08 itself. 

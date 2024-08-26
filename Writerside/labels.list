@@ -2,9 +2,9 @@
 <!DOCTYPE labels SYSTEM "https://resources.jetbrains.com/writerside/1.0/labels-list.dtd">
 <labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
-    <primary-label id="serpenta-starter-kit" short-name="L" name="SvelteKit Starter Kit">
+    <primary-label id="tauri-starter-kit" short-name="T" name="Tauri Starter Kit">
         This module is part of the SvelteKit starter kit and does not exist in the `@delfthyperloop/serpenta` package.
-        For more information check Serpenta > SvelteKit Starter Kit
+        For more information check Serpenta > Tauri Starter Kit
     </primary-label>
 
     <primary-label id="jetbrains" short-name="JB" name="JetBrains" href="https://www.jetbrains.com" color="red">

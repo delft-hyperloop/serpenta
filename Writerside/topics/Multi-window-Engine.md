@@ -1,7 +1,8 @@
 # Multi-window Engine
 
-<primary-label ref="serpenta-starter-kit"/>
+<primary-label ref="tauri-starter-kit"/>
 
-> To use teh multi-monitor engine for Serpenta, start from the provided Starter Template.
+> To use the multi-monitor engine for Serpenta, start from the provided Starter Template.
 
-Start typing here...
+While the UI Serpenta kit requires a windowing engine, the Tauri starter pack provides a prebuilt implementation based
+on Tauri.

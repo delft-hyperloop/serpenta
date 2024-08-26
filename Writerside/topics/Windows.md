@@ -1,5 +1,5 @@
 # Windows
 
-<primary-label ref="serpenta-starter-kit"/>
+<primary-label ref="tauri-starter-kit"/>
 
 Start typing here...

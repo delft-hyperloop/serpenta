@@ -1,7 +1,7 @@
 # Safe Data Display
 
-## abnormal values painting
+## Abnormal values painting
 
-## stale data painting
+## Stale data painting
 
-## datatypes units display
+## Datatypes units display

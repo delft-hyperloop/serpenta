@@ -8,7 +8,7 @@
 
     <toc-element topic="Home.md">
         <toc-element topic="Getting-Started.md"/>
-        <toc-element topic="SvelteKit-Starter-Kit.md"/>
+        <toc-element topic="Tauri-Starter-Kit.md"/>
         <toc-element topic="DH08-GUI-Setup.md"/>
         <toc-element topic="Contributing-Maintenance.md"/>
     </toc-element>

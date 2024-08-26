@@ -17,7 +17,7 @@ available for you inside. You can also opt in for the traditional approach and d
 ### Using the Nix package manager
 
 [Nix](https://nixos.org/) is a declarative package manager that can be used to make reproducible environments
-effortlessly. It is available on Windows (under WSL), Mac and Linux.
+effortlessly. It is available on Windows (under WSL), Mac, and Linux.
 
 **Using a shell:**
 
@@ -156,8 +156,8 @@ cd [name]
 npm i
 ```
 
-This will automatically create a project folder with SvelteKit, Tauri and its dependencies installed (by the last step). 
-For further information on this template project, check the [SvelteKit Starter Kit page](SvelteKit-Starter-Kit.md).
+This will automatically create a project folder with SvelteKit, Tauri, and its dependencies installed (by the last step). 
+For further information on this template project, check the [SvelteKit Starter Kit page](Tauri-Starter-Kit.md).
 
 
 

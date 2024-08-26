@@ -1,6 +1,6 @@
-# SvelteKit Starter Kit
+# Tauri Starter Kit
 
-<primary-label ref="serpenta-starter-kit"/>
+<primary-label ref="tauri-starter-kit"/>
 
 The Serpenta Started kit provides a project with SvelteKit, Tauri and several other dependencies defined in its
 `project.json` and `Cargo.toml` files. This is the preferable way to start a new project that will use the Serpenta
