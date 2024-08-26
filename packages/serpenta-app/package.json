@@ -1,6 +1,6 @@
 {
   "name": "@delft-hyperloop/create-serpenta-app",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "A starter template for working with serpenta. Creates the routes and Tauri base files",
   "main": "index.mjs",
   "keywords": [

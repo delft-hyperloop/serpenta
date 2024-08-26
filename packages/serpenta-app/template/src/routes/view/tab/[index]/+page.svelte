@@ -1,9 +1,5 @@
 <script lang="ts">
-    import {
-        ProceduresTab,
-    } from "$lib"
     import type { PageData } from './$types';
-
 
     export let data: PageData;
 </script>
@@ -26,5 +22,4 @@
     <!--{:else if data.index === 7}-->
     <!--    <DebugTab pop_up={false}  />-->
     <!--{/if}-->
-    <ProceduresTab pop_up={false} />
 </div>

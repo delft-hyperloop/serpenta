@@ -1,5 +1,7 @@
 import { WebviewWindow, type WindowOptions } from "@tauri-apps/api/window"
 
+import type { WindowEngine } from "@delft-hyperloop/serpenta";
+
 export class ViewWindow {
     private readonly _webview: WebviewWindow
 
@@ -13,5 +15,11 @@ export class ViewWindow {
         this._webview.once("tauri://error", function(e) {
             console.error("Error creating window", e)
         })
+    }
+}
+
+export class WindowCreator implements WindowEngine<WindowOptions> {
+    spawnWindow(url: string, label: string): void {
+        new ViewWindow(label, url);
     }
 }

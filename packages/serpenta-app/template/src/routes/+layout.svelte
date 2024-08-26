@@ -1,7 +1,7 @@
 <script lang="ts">
     import "../app.postcss";
     import { initializeStores } from "@skeletonlabs/skeleton";
-    import { SerpentaShell, defineConfig, PlotBuffer, StrokePresets } from "@delft-hyperloop/serpenta";
+    import { SerpentaShell, defineConfig } from "@delft-hyperloop/serpenta";
 
     initializeStores();
 
@@ -14,6 +14,8 @@
     import { appWindow } from "@tauri-apps/api/window";
     import { writable } from "svelte/store";
     import { GrandDataDistributor } from "$lib/util/GrandDataDistributor";
+    import { WindowCreator } from "$lib/util/WindowControl";
+    import { CommandInvoker } from "$lib/util/CommandInvoker";
 
     const gdd = GrandDataDistributor.getInstance();
     gdd.registerStore("Datatype1", 0, undefined, "V");
@@ -25,12 +27,17 @@
     gdd.registerStore("Datatype7", 0, undefined, "V");
     gdd.registerStore("FSMState", 0);
 
+    const wm = new WindowCreator();
+    const ci = new CommandInvoker();
+
     const config = defineConfig({
         appWindow: appWindow,
         pod_name: "Helios III",
 
         // @todo: see if you will use the default grand data distributor - K.P.
         grand_data_distributor: gdd,
+        window_engine: wm,
+        command_invocation: ci,
         latest_timestamp: latestTimestamp
     });
 </script>
