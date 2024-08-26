@@ -7,7 +7,7 @@
     const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
     const gdd: DataDistributor = config.grand_data_distributor;
     const bigErrorStatus: Writable<ErrorStatus> = config.big_error;
-    const fsmStateName: string = config.stores.fsm;
+    const fsmStateName: string = config.stores.fsm_name;
     const podName: string = config.pod_name;
 
     let time = new Date().toLocaleTimeString([], {

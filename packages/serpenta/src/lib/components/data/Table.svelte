@@ -1,9 +1,6 @@
 <script lang="ts">
-    import { Store } from "$lib";
-    import { NamedDatatypeValues } from "$lib/types.js";
-
     export let tableArr: any[][] = [];
-    export let titles = ["Module", "Temp C°"];
+    export let titles = ["Empty title"];
     export let background = "bg-surface-800";
 </script>
 
@@ -30,13 +27,14 @@
                             class="{i === 0 ? 'px-2' : 'px-4'}
                            {i === row.length - 1 ? '' : 'border-r border-r-primary-700'}"
                         >
-                            {#if typeof cell === "number"}
-                                <span class="font-mono">{cell.toFixed(2)}</span>
-                            {:else if NamedDatatypeValues.includes(cell)}
-                                <Store datatype={cell} />
-                            {:else}
-                                {cell}
-                            {/if}
+                            {cell}
+                            <!--{#if typeof cell === "number"}-->
+                            <!--    <span class="font-mono">{cell.toFixed(2)}</span>-->
+                            <!--{:else if NamedDatatypeValues.includes(cell)}-->
+                            <!--    <Store datatype={cell} />-->
+                            <!--{:else}-->
+                            <!--    {cell}-->
+                            <!--{/if}-->
                         </td>
                     {/each}
                 </tr>
