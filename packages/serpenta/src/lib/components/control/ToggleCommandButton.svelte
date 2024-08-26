@@ -1,7 +1,5 @@
 <script lang="ts">
-    import { invoke } from "@tauri-apps/api/tauri";
     import { getContext } from "svelte";
-    import { util } from "$lib";
     import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
 
     export let offCmd: string;
@@ -13,28 +11,28 @@
     // for binding
     export let status: boolean = false;
 
-    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
+    const config = getContext<FinalizedConfig>("serpenta-config");
+    const commandInvoker = config.command_invocation;
 
     const toggleOff = () => {
-        invoke("send_command", { cmdName: offCmd, val }).then(r => {
+        commandInvoker.invokeCommand("send_command", { cmdName: offCmd, val }).then(r => {
             if (r) {
                 status = false;
-                util.log(`send command ${offCmd} worked`, config.channel.info);
                 callback(val);
             } else {
-                util.log(`send command ${offCmd} failed`, config.channel.error);
+                console.error(`send command ${offCmd} failed`);
             }
         });
     };
 
     const toggleOn = () => {
-        invoke("send_command", { cmdName: onCmd, val }).then(r => {
+        commandInvoker.invokeCommand("send_command", { cmdName: onCmd, val }).then(r => {
             if (r) {
                 status = true;
-                util.log(`send command ${onCmd} worked`, config.channel.info);
+                console.error(`send command ${onCmd} worked`);
                 callback(val);
             } else {
-                util.log(`send command ${onCmd} failed`, config.channel.error);
+                console.error(`send command ${onCmd} failed`);
             }
         });
     };
