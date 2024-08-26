@@ -1,14 +1,13 @@
 <script lang="ts">
-    import { getContext, onMount } from "svelte";
-    import { ErrorStatus, type DataDistributor } from "$lib";
+    import { onMount } from "svelte";
+    import { ErrorStatus, type DataDistributor, getSerpentaContext } from "$lib";
     import type { Writable } from "svelte/store";
-    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
 
-    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
-    const gdd: DataDistributor = config.grand_data_distributor;
-    const bigErrorStatus: Writable<ErrorStatus> = config.big_error;
-    const fsmStateName: string = config.stores.fsm_name;
-    const podName: string = config.pod_name;
+    const context = getSerpentaContext();
+    const gdd: DataDistributor = context.grand_data_distributor;
+    const bigErrorStatus: Writable<ErrorStatus> = context.big_error;
+    const fsmStateName: string = context.stores.fsm_name;
+    const podName: string = context.pod_name;
 
     let time = new Date().toLocaleTimeString([], {
         hour: "2-digit",

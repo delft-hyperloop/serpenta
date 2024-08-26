@@ -1,12 +1,11 @@
 <script lang="ts">
-    import { getContext, onDestroy, onMount } from "svelte";
+    import { onDestroy, onMount } from "svelte";
     import "uplot/dist/uPlot.min.css";
-    import { PlotBuffer, PopupIcon } from "$lib";
-    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
+    import { getSerpentaContext, PlotBuffer, PopupIcon } from "$lib";
 
-    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
-    const grandCharter = config.grand_charter;
-    const windowEngine = config.window_engine;
+    const context = getSerpentaContext();
+    const grandCharter = context.grand_charter;
+    const windowEngine = context.window_engine;
 
     function popoutWindow() {
         windowEngine.spawnWindow(title, `/view/chart/${title}`);

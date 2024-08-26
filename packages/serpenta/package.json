@@ -1,6 +1,6 @@
 {
   "name": "@delft-hyperloop/serpenta",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": false,
   "description": "UI Component Library of Delft Hyperloop's Serpenta GUI Standard.",
   "keywords": [

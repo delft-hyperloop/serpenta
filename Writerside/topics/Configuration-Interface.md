@@ -7,16 +7,10 @@ All Serpenta components shall get data that shall be configurable from this cont
 ```html
 <!-- Component.svelte -->
 <script lang="ts">
-    import { getContext } from "svelte";
-    import type { FinalizedConfig } 
-        from "$lib/appShell/SerpentaConfig";
-    
-    const config = getContext<FinalizedConfig>("serpenta-config");
+    import { getSerpentaContext } from "$lib";
+
+    const context = getSerpentaContext();
 </script>
 ```
 
 The config itself has a describing interface:
-
-```Typescript
-const
-```

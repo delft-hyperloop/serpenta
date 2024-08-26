@@ -1,10 +1,8 @@
 <script lang="ts">
-    import { getContext, onDestroy, onMount } from "svelte";
-    import { type DataDistributor } from "$lib";
-    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
+    import { onDestroy, onMount } from "svelte";
+    import { getSerpentaContext } from "$lib";
 
-    const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
-    const gdd: DataDistributor = config.grand_data_distributor;
+    const gdd = getSerpentaContext().grand_data_distributor;
 
     let boot_state: SVGGElement;
     let est_con_state: SVGGElement;

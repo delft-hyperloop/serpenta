@@ -3,10 +3,10 @@
     import { initializeStores, Modal, Toast } from "@skeletonlabs/skeleton";
     import { BottomBar, TitleBar } from "$lib";
     import { onDestroy, setContext } from "svelte";
-    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
+    import type { FinalizedContext } from "$lib/appShell/SerpentaConfig";
 
-    export let config: FinalizedConfig;
-    setContext<FinalizedConfig>("serpenta-config", config);
+    export let config: FinalizedContext;
+    setContext<FinalizedContext>("serpenta-context", config);
 
     config.grand_data_distributor.start(50);
 

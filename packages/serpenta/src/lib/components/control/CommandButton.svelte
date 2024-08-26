@@ -1,7 +1,5 @@
 <script lang="ts">
-    import { util } from "$lib";
-    import { getContext } from "svelte";
-    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
+    import { getSerpentaContext, util } from "$lib";
 
     export let className: string = "";
     export let cmd: string;
@@ -11,11 +9,11 @@
     export let errorCallback: (error: string) => void = () => {};
     export let textOverride: string = "";
 
-    const config = getContext<FinalizedConfig>("serpenta-config");
-    const commandInvoker = config.command_invocation;
+    const context = getSerpentaContext();
+    const commandInvoker = context.command_invocation;
 
     let send = async () => {
-        await commandInvoker.invokeCommand<void>(config.generic_command_name, { cmdName: cmd, val })
+        await commandInvoker.invokeCommand<void>(context.generic_command_name, { cmdName: cmd, val })
             .then(returned => {
                 console.log(`Command ${cmd} sent with val: ${val}`);
                 successCallback(returned);

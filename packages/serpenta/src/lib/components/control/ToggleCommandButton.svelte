@@ -1,6 +1,5 @@
 <script lang="ts">
-    import { getContext } from "svelte";
-    import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
+    import { getSerpentaContext } from "$lib/appShell/SerpentaConfig";
 
     export let offCmd: string;
     export let onCmd: string;
@@ -11,8 +10,7 @@
     // for binding
     export let status: boolean = false;
 
-    const config = getContext<FinalizedConfig>("serpenta-config");
-    const commandInvoker = config.command_invocation;
+    const commandInvoker = getSerpentaContext().command_invocation;
 
     const toggleOff = () => {
         commandInvoker.invokeCommand("send_command", { cmdName: offCmd, val }).then(r => {

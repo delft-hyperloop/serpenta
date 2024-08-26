@@ -1,6 +1,7 @@
 import { writable, type Writable } from "svelte/store";
 import { ErrorStatus, PlotBuffer } from "$lib";
 import type { DataDistributor, WindowEngine, CommandInvocation } from "$lib";
+import { getContext } from "svelte";
 
 /**
  * Serpenta configuration object
@@ -23,7 +24,7 @@ export interface SerpentaConfig {
     };
 }
 
-export interface FinalizedConfig {
+export interface FinalizedContext {
     appWindow: any;
     pod_name: string;
 
@@ -41,7 +42,7 @@ export interface FinalizedConfig {
     };
 }
 
-export function defineConfig(config: SerpentaConfig): FinalizedConfig {
+export function defineConfig(config: SerpentaConfig): FinalizedContext {
     return {
         appWindow: config.appWindow,
         pod_name: config.pod_name,
@@ -59,4 +60,12 @@ export function defineConfig(config: SerpentaConfig): FinalizedConfig {
             fsm_name: config.stores?.fsm_name || "FSMState"
         }
     };
+}
+
+/**
+ * Get the Serpenta context from within the `<SerpentaShell>` base component.
+ * @note this will return null if not called within the serpenta shell.
+ */
+export function getSerpentaContext(): FinalizedContext {
+    return getContext<FinalizedContext>("serpenta-context");
 }

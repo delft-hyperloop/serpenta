@@ -21,7 +21,7 @@ import { PlotBuffer, StrokePresets } from "$lib/PlotBuffer";
 import type { DataDistributor } from "$lib/middleware/DataDistributor";
 import type { WindowEngine } from "$lib/middleware/WindowControl";
 import util from "$lib/util";
-import { defineConfig, type SerpentaConfig } from "$lib/appShell/SerpentaConfig";
+import { defineConfig, getSerpentaContext, type SerpentaConfig } from "$lib/appShell/SerpentaConfig";
 import type { CommandInvocation } from "./middleware/CommandInvocation";
 
 /**
@@ -56,6 +56,7 @@ export {
     util,
     SerpentaShell,
     defineConfig,
+    getSerpentaContext,
     StrokePresets,
     PopupIcon
 };
