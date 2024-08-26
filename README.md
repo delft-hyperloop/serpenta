@@ -18,6 +18,6 @@ The standard GUI created by DH08
 
 Home of the Serpenta GUI Standard by Delft Hyperloop.
 
-Browse the Serpenta's documentation for more information.
+Browse the [Serpenta's documentation](https://delft-hyperloop.github.io/serpenta/home.html) for more information.
 
 See the `packages` folder for its packages.
