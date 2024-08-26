@@ -1,5 +1,3 @@
-import { emit } from "@tauri-apps/api/event";
-
 function snakeToCamel(s: string): string {
     return s
         .replace(/([-_]\w)/g, g => g[1].toUpperCase())
@@ -18,8 +16,4 @@ function colourCode(value: number, max: number, saturation: number = 50): string
     return `hsl(${hue}, ${saturation}%, 50%)`;
 }
 
-function log(message: string, channel: string) {
-    emit(channel, message).then(r => console.log(r));
-}
-
-export default { snakeToCamel, normalize, colourCode, log };
+export default { snakeToCamel, normalize, colourCode };

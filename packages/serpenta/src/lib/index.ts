@@ -1,5 +1,4 @@
 // Reexport your entry components here
-
 import CommandButton from "$lib/components/control/CommandButton.svelte";
 import TauriCommandButton from "$lib/components/control/TauriCommandButton.svelte";
 import ToggleCommandButton from "$lib/components/control/ToggleCommandButton.svelte";
@@ -17,11 +16,13 @@ import Store from "$lib/components/data/Store.svelte";
 import Table from "$lib/components/data/Table.svelte";
 import SerpentaShell from "$lib/appShell/SerpentaShell.svelte";
 import PanelBase from "$lib/appShell/PanelBase.svelte";
+import PopupIcon from "$lib/PopupIcon.svelte";
 import { PlotBuffer, StrokePresets } from "$lib/PlotBuffer";
 import type { DataDistributor } from "$lib/middleware/DataDistributor";
+import type { WindowEngine } from "$lib/middleware/WindowControl";
 import util from "$lib/util";
-import { ViewWindow } from "./middleware/WindowControl";
 import { defineConfig, type SerpentaConfig } from "$lib/appShell/SerpentaConfig";
+import type { CommandInvocation } from "./middleware/CommandInvocation";
 
 /**
  * Function to convert data received at DATAPOINT.value to a given type
@@ -51,12 +52,17 @@ export {
     Store,
     Table,
     PlotBuffer,
-    type DataDistributor,
     PanelBase,
     util,
-    ViewWindow,
     SerpentaShell,
-    type SerpentaConfig,
     defineConfig,
-    StrokePresets
+    StrokePresets,
+    PopupIcon
 };
+
+export type {
+    DataDistributor,
+    WindowEngine,
+    SerpentaConfig,
+    CommandInvocation,
+}

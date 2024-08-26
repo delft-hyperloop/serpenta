@@ -1,12 +1,16 @@
 <script lang="ts">
     import { getContext, onDestroy, onMount } from "svelte";
     import "uplot/dist/uPlot.min.css";
-    import { PlotBuffer, ViewWindow } from "$lib";
-    import Icon from "@iconify/svelte";
+    import { PlotBuffer, PopupIcon } from "$lib";
     import type { FinalizedConfig } from "$lib/appShell/SerpentaConfig";
 
     const config: FinalizedConfig = getContext<FinalizedConfig>("serpenta-config");
     const grandCharter = config.grand_charter;
+    const windowEngine = config.window_engine;
+
+    function popoutWindow() {
+        windowEngine.spawnWindow(title, `/view/chart/${title}`);
+    }
 
     export let title: string;
     export let background: string = "bg-surface-800";
@@ -39,8 +43,8 @@
             <h4 class="text-md text-primary-100">{title}</h4>
             <span class="font-mono"></span>
             {#if pop_up}
-                <button on:click={() => ViewWindow.newWindow(title, `/view/chart/${title}`)}>
-                    <Icon icon="carbon:popup" />
+                <button on:click={popoutWindow}>
+                    <PopupIcon />
                 </button>
             {/if}
         </div>

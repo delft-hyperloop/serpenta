@@ -1,24 +1,25 @@
 {
   "name": "@delft-hyperloop/serpenta",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
   "description": "UI Component Library of Delft Hyperloop's Serpenta GUI Standard.",
   "keywords": [
     "mission-critical",
-    "tauri",
     "svelte",
     "sveltekit",
     "tailwindcss",
     "delft",
     "hyperloop",
     "delft hyperloop",
-    "serpenta"
+    "serpenta",
+    "gui",
+    "graphical user interface"
   ],
   "license": "MIT",
   "author": "Kiril Panayotov <contact@zakrok.dev> (https://zakrok.dev)",
   "contributors": [
     "Andreas Tsatsanis <code@andreats.com> (https://www.andreats.com/)",
-    "Francisco Amaro"
+    "Francisco Amaro <fdmamaro24@gmail.com> (https://www.linkedin.com/in/francisco-amaro-4585a6220/)"
   ],
   "homepage": "https://delft-hyperloop.github.io/serpenta",
   "scripts": {
@@ -78,8 +79,6 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "@iconify/svelte": "^4.0.2",
-    "@tauri-apps/api": "^1.6.0",
     "svelte-splitpanes": "^8.0.5",
     "uplot": "^1.6.30"
   }
