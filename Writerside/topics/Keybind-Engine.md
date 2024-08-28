@@ -1,4 +1,4 @@
-# Keybind Handler
+# Keybinding Engine
 
 <primary-label ref="tauri-starter-kit"/>
 

@@ -1,3 +1,0 @@
-# Separation of View &amp; Control
-
-Start typing here...

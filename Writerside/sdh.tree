@@ -12,6 +12,19 @@
         <toc-element topic="DH08-GUI-Setup.md"/>
         <toc-element topic="Contributing-Maintenance.md"/>
     </toc-element>
+    <toc-element topic="Architecture.md">
+        <toc-element topic="Stores.md"/>
+        <toc-element topic="Configuration-Interface.md"/>
+        <toc-element topic="UI-Required-Interfaces.md">
+            <toc-element topic="Data-Distributor.md"/>
+            <toc-element topic="Command-Invoker.md">
+            </toc-element>
+            <toc-element topic="Windowing-Engine.md"/>
+        </toc-element>
+        <toc-element topic="Tauri-Starter-Kit-Provided.md">
+            <toc-element topic="Keybind-Engine.md"/>
+        </toc-element>
+    </toc-element>
     <toc-element topic="Safety-Features.md">
         <toc-element topic="Alerts.md"/>
         <toc-element topic="Safe-Data-Display.md"/>
@@ -19,14 +32,6 @@
         <toc-element topic="Procedures.md"/>
         <toc-element topic="Keybinds.md"/>
         <toc-element topic="Multi-window-Engine.md"/>
-    </toc-element>
-    <toc-element topic="Architecture.md">
-        <toc-element topic="Stores.md"/>
-        <toc-element topic="Configuration-Interface.md"/>
-        <toc-element topic="Front-end-State-Persistence.md"/>
-        <toc-element topic="Separation-of-View-Control.md"/>
-        <toc-element topic="Grand-Data-Distributor.md"/>
-        <toc-element topic="Grand-Charter.md"/>
     </toc-element>
     <toc-element topic="UI-Toolkit.md">
         <toc-element topic="Base.md"/>
@@ -44,13 +49,14 @@
         <toc-element topic="Logger-flusher.md"/>
         <toc-element topic="Datapoint-script.md"/>
         <toc-element topic="Commands-script.md"/>
-        <toc-element topic="Keybind-Handler.md"/>
     </toc-element>
     <toc-element topic="Reference.md">
         <toc-element topic="Conventions.md"/>
         <toc-element topic="Envrionment-Variables.md"/>
         <toc-element topic="Tauri-Event-Channels.md"/>
     </toc-element>
-    <toc-element topic="Guides.md"/>
+    <toc-element topic="Guides.md">
+        <toc-element topic="Achieving-safety-with-the-provided-code.md"/>
+    </toc-element>
     <toc-element topic="epilogue.md"/>
 </instance-profile>

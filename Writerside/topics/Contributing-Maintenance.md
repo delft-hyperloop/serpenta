@@ -22,7 +22,8 @@ guidelines of Delft Hyperloop.
 ### Suggesting new features
 
 One can suggest any feature for Serpenta by opening issues in the [Serpenta repository](https://github.com/delft-hyperloop/serpenta).
-The people who have a final say in whether your suggestion should become part of Serpenta,
+
+> The people who have a final say in whether your suggestion should become part of Serpenta,
 however, are the active Sense & control software engineers at the time of submission.
 
 <seealso>

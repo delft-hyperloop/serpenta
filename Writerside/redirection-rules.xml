@@ -54,4 +54,26 @@
         <description>Created after removal of "Stale Data Painter" from Serpenta Developer Handbook</description>
         <accepts>Stale-Data-Painter.html</accepts>
     </rule>
+    <rule id="79fb3235">
+        <description>Created after removal of "Front-end State Persistence" from Serpenta Developer Handbook
+        </description>
+        <accepts>Front-end-State-Persistence.html</accepts>
+    </rule>
+    <rule id="12569081">
+        <description>
+            <![CDATA[Created after removal of "Separation of View & Control" from Serpenta Developer Handbook]]></description>
+        <accepts>Separation-of-View-Control.html</accepts>
+    </rule>
+    <rule id="282797c5">
+        <description>Created after removal of "Grand Data Distributor" from Serpenta Developer Handbook</description>
+        <accepts>Grand-Data-Distributor.html</accepts>
+    </rule>
+    <rule id="7c19a755">
+        <description>Created after removal of "Grand Charter" from Serpenta Developer Handbook</description>
+        <accepts>Grand-Charter.html</accepts>
+    </rule>
+    <rule id="3e5b622">
+        <description>Created after removal of "Keybind Handler" from Serpenta Developer Handbook</description>
+        <accepts>Keybind-Handler.html</accepts>
+    </rule>
 </rules>

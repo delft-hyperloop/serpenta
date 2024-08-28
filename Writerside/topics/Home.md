@@ -19,12 +19,14 @@ Serpenta is a <tooltip term="GUI standard">GUI standard</tooltip> created and im
 ground station controlling Helios III. It provides:
 
 - a common UI toolkit for displaying data points received from an arbitrary Hyperloop pod
-- a configurable middleware for managing data distribution and command issuing to the pod 
+- a configurable middleware for managing data distribution and command issuing to the pod
 - utilities for refreshing and supporting charts
+- middleware example built for Tauri
 
 Serpenta is split between a UI kit that is completely decoupled from middleware and a Tauri adaptation of such 
 middleware.
-Originally, Serpenta ran on Tauri, but its front-end was entirely decoupled from it to allow for more flexibility in 
+
+> Originally, Serpenta ran on Tauri, but its front-end was entirely decoupled from it to allow for more flexibility in 
 choosing a compatible tech stack. 
 
 ![dh08serpenta.png](dh08serpenta.png){style="block"} _DH08 Serpenta GUI on its Home tab_
@@ -39,8 +41,7 @@ Built with 💚 by Kiril Panayotov, Andreas Tsatsanis & Fransisco Amaro - DH08.
 <seealso>
     <category ref="related">
         <a href="UI-Toolkit.md">Svelte UI Toolkit</a>
-        <a href="Grand-Data-Distributor.md">GDD Interface</a>
-        <a href="Grand-Charter.md">Chart manager interface</a>
+        <a href="Data-Distributor.md">Data Distributor Interface</a>
         <a href="Guides.md">Guides and recipes</a>
     </category>
     <category ref="external">
