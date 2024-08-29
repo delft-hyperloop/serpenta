@@ -26,8 +26,8 @@ globally and have multiple appearances across the front-end of the GUI, as well 
 ## Usage within the Serpenta GUI
 
 All data that is received,
-parsed and distributed by an implementation of a [Grand Data Distributor](Data-Distributor.md) is maintained within stores.
-However, Serpenta uses its own interface that extends the svelte stores with additional
+parsed and distributed by an implementation of a [Grand Data Distributor](Data-Distributor.md) is maintained within fsm_store_name.
+However, Serpenta uses its own interface that extends the svelte fsm_store_name with additional
 information that is closely tied to the received values.
 
 ```Typescript
