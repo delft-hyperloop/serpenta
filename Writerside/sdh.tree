@@ -22,7 +22,6 @@
             <toc-element topic="Windowing-Engine.md"/>
         </toc-element>
         <toc-element topic="Tauri-Starter-Kit-Provided.md">
-            <toc-element topic="Alerting.md"/>
             <toc-element topic="Keybind-Engine.md"/>
         </toc-element>
     </toc-element>
@@ -47,7 +46,6 @@
         <toc-element topic="Windows.md"/>
     </toc-element>
     <toc-element topic="Utilities.md">
-        <toc-element topic="Logger-flusher.md"/>
         <toc-element topic="Datapoint-script.md"/>
         <toc-element topic="Commands-script.md"/>
     </toc-element>

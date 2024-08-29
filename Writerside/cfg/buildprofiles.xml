@@ -14,16 +14,6 @@
             <noindex-content>true</noindex-content>
         </variables>
     </build-profile>
-    <build-profile instance="a">
-        <variables>
-            <noindex-content>true</noindex-content>
-        </variables>
-    </build-profile>
-    <build-profile instance="ug">
-        <variables>
-            <noindex-content>true</noindex-content>
-        </variables>
-    </build-profile>
 
     <footer>
         <copyright>2024 Kiril Panayotov, Delft Hyperloop</copyright>

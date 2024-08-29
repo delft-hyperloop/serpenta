@@ -76,4 +76,13 @@
         <description>Created after removal of "Keybind Handler" from Serpenta Developer Handbook</description>
         <accepts>Keybind-Handler.html</accepts>
     </rule>
+    <rule id="542503a2">
+        <description><![CDATA[Created after removal of "<Alerting.md>" from Serpenta Developer Handbook]]></description>
+        <accepts>Alerting.html</accepts>
+    </rule>
+    <rule id="22e44e1b">
+        <description>
+            <![CDATA[Created after removal of "Logger & Flusher" from Serpenta Developer Handbook]]></description>
+        <accepts>Logger-flusher.html</accepts>
+    </rule>
 </rules>

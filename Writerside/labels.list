@@ -12,8 +12,5 @@
     </primary-label>
 
     <secondary-label id="wip" name="WIP" color="purple">Work in progress</secondary-label>
-    <secondary-label id="beta" name="β" color="tangerine">Beta</secondary-label>
-
-    <secondary-label id="experimental" name="Experimental" color="purple">This is an experimental feature</secondary-label>
-    <secondary-label id="2023.3" name="2023.3" color="blue">New in version 2023.3</secondary-label>
+    <secondary-label id="tauri-starter-kit-s" name="Tauri Starter Kit">Beta</secondary-label>
 </labels>

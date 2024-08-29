@@ -2,4 +2,4 @@
 
 <primary-label ref="tauri-starter-kit"/>
 
-Start typing here...
+Check the [Keybinding Engine article](Keybind-Engine.md) of the Tauri-provided features.

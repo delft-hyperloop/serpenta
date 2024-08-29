@@ -5,7 +5,7 @@ PR conventions where not present during DH08, but the one below are left for sug
 throughout Serpenta):
 
 -   use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) for commit naming
--   use Oxford British english.
+-   use Oxford British English.
 
 ## Prettier formatting for TypeScript
 
