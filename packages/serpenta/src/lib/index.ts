@@ -1,6 +1,6 @@
 // Reexport your entry components here
-import CommandButton from "$lib/components/control/CommandButton.svelte";
-import TauriCommandButton from "$lib/components/control/TauriCommandButton.svelte";
+import CommandButton from "$lib/components/control/PodCommandButton.svelte";
+import TauriCommandButton from "$lib/components/control/BackendCommandButton.svelte";
 import ToggleCommandButton from "$lib/components/control/ToggleCommandButton.svelte";
 import Status from "$lib/components/data/Status.svelte";
 import Battery from "$lib/components/graphic/Battery.svelte";

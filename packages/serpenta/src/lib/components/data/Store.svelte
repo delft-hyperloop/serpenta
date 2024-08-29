@@ -4,7 +4,7 @@
 
     const context = getSerpentaContext();
     const latestTimestamp = context.latest_timestamp;
-    const gdd: DataDistributor = context.grand_data_distributor;
+    const gdd: DataDistributor = context.data_distributor;
 
     const STALE_DATA_TICKS = 10_000;
     export let datatype: string;

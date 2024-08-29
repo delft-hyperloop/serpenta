@@ -13,7 +13,7 @@
     const commandInvoker = context.command_invocation;
 
     let send = async () => {
-        await commandInvoker.invokeCommand<void>(context.generic_command_name, { cmdName: cmd, val })
+        await commandInvoker.invokeCommand<void>(context.pod_command_name, { cmdName: cmd, val })
             .then(returned => {
                 console.log(`Command ${cmd} sent with val: ${val}`);
                 successCallback(returned);

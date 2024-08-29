@@ -19,27 +19,23 @@ export interface SerpentaConfig {
     latest_timestamp?: Writable<number>;
 
     generic_command_name?: string;
-    stores?: {
-        fsm_name?: string;
-    };
+    fsm_store_name?: string;
 }
 
 export interface FinalizedContext {
     appWindow: any;
     pod_name: string;
 
-    grand_data_distributor: DataDistributor;
+    data_distributor: DataDistributor;
     window_engine: WindowEngine<any>;
     command_invocation: CommandInvocation;
     grand_charter: Writable<Map<string, PlotBuffer>>;
 
-    big_error: Writable<ErrorStatus>;
+    error_status: Writable<ErrorStatus>;
     latest_timestamp: Writable<number>;
 
-    generic_command_name: string;
-    stores: {
-        fsm_name: string;
-    };
+    pod_command_name: string;
+    fsm_store_name: string;
 }
 
 export function defineConfig(config: SerpentaConfig): FinalizedContext {
@@ -47,18 +43,16 @@ export function defineConfig(config: SerpentaConfig): FinalizedContext {
         appWindow: config.appWindow,
         pod_name: config.pod_name,
 
-        grand_data_distributor: config.grand_data_distributor,
+        data_distributor: config.grand_data_distributor,
         window_engine: config.window_engine,
         command_invocation: config.command_invocation,
         grand_charter: config.grand_charter || writable(new Map<string, PlotBuffer>()),
 
-        big_error: config.big_error || writable<ErrorStatus>(ErrorStatus.SAFE),
+        error_status: config.big_error || writable<ErrorStatus>(ErrorStatus.SAFE),
         latest_timestamp: config.latest_timestamp || writable<number>(0),
 
-        generic_command_name: config.generic_command_name || "send_command",
-        stores: {
-            fsm_name: config.stores?.fsm_name || "FSMState"
-        }
+        pod_command_name: config.generic_command_name || "send_command",
+        fsm_store_name: config.fsm_store_name || "FSMState"
     };
 }
 

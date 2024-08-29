@@ -1,5 +1,4 @@
 <script lang="ts">
-
     import { initializeStores, Modal, Toast } from "@skeletonlabs/skeleton";
     import { BottomBar, TitleBar } from "$lib";
     import { onDestroy, setContext } from "svelte";
@@ -8,12 +7,12 @@
     export let config: FinalizedContext;
     setContext<FinalizedContext>("serpenta-context", config);
 
-    config.grand_data_distributor.start(50);
+    config.data_distributor.start(50);
 
     initializeStores();
 
     onDestroy(async () => {
-        config.grand_data_distributor.kill();
+        config.data_distributor.kill();
     });
 </script>
 

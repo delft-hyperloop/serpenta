@@ -2,7 +2,7 @@
     import { onDestroy, onMount } from "svelte";
     import { getSerpentaContext } from "$lib";
 
-    const gdd = getSerpentaContext().grand_data_distributor;
+    const gdd = getSerpentaContext().data_distributor;
 
     let boot_state: SVGGElement;
     let est_con_state: SVGGElement;

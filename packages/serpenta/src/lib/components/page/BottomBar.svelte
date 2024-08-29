@@ -4,9 +4,9 @@
     import type { Writable } from "svelte/store";
 
     const context = getSerpentaContext();
-    const gdd: DataDistributor = context.grand_data_distributor;
-    const bigErrorStatus: Writable<ErrorStatus> = context.big_error;
-    const fsmStateName: string = context.stores.fsm_name;
+    const gdd: DataDistributor = context.data_distributor;
+    const bigErrorStatus: Writable<ErrorStatus> = context.error_status;
+    const fsmStateName: string = context.fsm_store_name.fsm_name;
     const podName: string = context.pod_name;
 
     let time = new Date().toLocaleTimeString([], {
