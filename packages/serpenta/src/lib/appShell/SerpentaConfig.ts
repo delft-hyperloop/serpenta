@@ -10,7 +10,7 @@ export interface SerpentaConfig {
     appWindow: any;
     pod_name: string;
 
-    grand_data_distributor: DataDistributor;
+    data_distributor: DataDistributor;
     window_engine: WindowEngine<any>;
     command_invocation: CommandInvocation;
     grand_charter?: Writable<Map<string, PlotBuffer>>;
@@ -43,7 +43,7 @@ export function defineConfig(config: SerpentaConfig): FinalizedContext {
         appWindow: config.appWindow,
         pod_name: config.pod_name,
 
-        data_distributor: config.grand_data_distributor,
+        data_distributor: config.data_distributor,
         window_engine: config.window_engine,
         command_invocation: config.command_invocation,
         grand_charter: config.grand_charter || writable(new Map<string, PlotBuffer>()),
