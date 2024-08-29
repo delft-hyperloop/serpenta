@@ -16,6 +16,9 @@
     import { GrandDataDistributor } from "$lib/util/GrandDataDistributor";
     import { WindowCreator } from "$lib/util/WindowControl";
     import { CommandInvoker } from "$lib/util/CommandInvoker";
+    import { listen } from "@tauri-apps/api/event";
+    import { invoke } from "@tauri-apps/api/tauri";
+    import { onDestroy } from "svelte";
 
     const gdd = GrandDataDistributor.getInstance();
     gdd.registerStore("Datatype1", 0, undefined, "V");
@@ -35,11 +38,28 @@
         pod_name: "Helios III",
 
         // @todo: see if you will use the default grand data distributor - K.P.
-        grand_data_distributor: gdd,
+        data_distributor: gdd,
         window_engine: wm,
         command_invocation: ci,
         latest_timestamp: latestTimestamp
     });
+
+    // shortcut engine
+    const unlisten = listen('shortcut_channel', (event: { payload: string }) => parseShortCut(event.payload));
+
+    const parseShortCut = async (shortcut:string):Promise<void> => {
+        const tabMatch = shortcut.match(/^tab_(\d)$/);
+        if (shortcut === "emergency_brake") {
+            console.log("Emergency brake");
+            await invoke('send_command', {cmdName: "EmergencyBrake", val: 0});
+        } else if (shortcut === "heartbeat") {
+            await invoke('send_command', {cmdName: "FrontendHeartbeat", val: 0});
+        }
+    }
+
+    onDestroy(() => unlisten);
+
+    //
 </script>
 
 <SerpentaShell config={config}>
