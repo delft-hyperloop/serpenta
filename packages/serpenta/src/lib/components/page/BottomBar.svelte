@@ -6,7 +6,7 @@
     const context = getSerpentaContext();
     const gdd: DataDistributor = context.data_distributor;
     const bigErrorStatus: Writable<ErrorStatus> = context.error_status;
-    const fsmStateName: string = context.fsm_store_name.fsm_name;
+    const fsmStateName: string = context.fsm_store_name;
     const podName: string = context.pod_name;
 
     let time = new Date().toLocaleTimeString([], {
